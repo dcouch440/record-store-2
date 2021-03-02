@@ -48,3 +48,4 @@ class Album
     @@albums.values().select {|obj| obj.name == name}[0]
   end
 end
+

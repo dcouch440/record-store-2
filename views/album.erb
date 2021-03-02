@@ -1,4 +1,14 @@
-<h4>Album Name: <%= @album.name %></h4>
+<h4>Album: <%= @album.name %></h4>
+
+<h5>
+  Artist: <%= @album.artist %>
+</h5> 
+<h5>
+  Genre: <%= @album.genre %>
+</h5> 
+<h5>
+  Year: <%= @album.year %>
+</h5> 
 
 <p><a href="/albums/<%= @album.id %>/edit">Edit album</a></p>
 <a href="/albums">Return to album list</a>

@@ -15,8 +15,6 @@ This is an application for learning TDD with ruby while attending Epicodus codin
 * * *
 
 ## Installation : 
-### Want to see this webpage now?
-
 
 * Go to (https://github.com/mekinsie/record-store).
 * Navigate to the code button on the github website.
@@ -32,7 +30,7 @@ This is an application for learning TDD with ruby while attending Epicodus codin
 
 - Once you have chosen your desired directory use the command.
 ```bash 
-git clone https://github.com/mekinsie/record-store
+git clone https://github.com/mekinsie/record-store.git
 ```
 
 <div 

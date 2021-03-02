@@ -9,6 +9,11 @@ get('/') do
   erb(:albums)
 end
 
+get('/album') do
+  @album = Album.find_by_name(params[:search])
+  erb(:album)
+end
+
 get('/albums') do
   @albums = Album.all
   erb(:albums)
@@ -24,10 +29,13 @@ get('/albums/:id') do
 end
 
 post('/albums') do
-  name = params[:album_name]
-  album = Album.new(name, nil)
+  name, year, genre, artist = params.values_at(
+    :album_name, :album_year, :album_genre, :album_artist
+  )
+  album = Album.new(name, year, genre, artist, nil)
   album.save()
   @albums = Album.all()
+  puts Album.albums
   erb(:albums)
 end
 

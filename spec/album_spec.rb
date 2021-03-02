@@ -78,7 +78,7 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
-      expect(Album.find_by_name('Giant Steps')).to(eq(album))
+      expect(Album.find_by_name('Giant Steps')).to(eq(1))
     end
   end
 
