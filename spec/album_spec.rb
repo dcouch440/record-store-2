@@ -15,9 +15,9 @@ describe '#Album' do
 
   describe('#save') do
     it("saves an album") do
-      album = Album.new("Giant Steps", nil) # nil added as second argument
+      album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil) # nil added as second argument
       album.save()
-      album2 = Album.new("Blue", nil) # nil added as second argument
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil) # nil added as second argument
       album2.save()
       expect(Album.all).to(eq([album, album2]))
     end
@@ -25,17 +25,17 @@ describe '#Album' do
 
   describe('#==') do
     it("is the same album if it has the same attributes as another album") do
-      album = Album.new("Blue", nil)
-      album2 = Album.new("Blue", nil)
+      album = Album.new("Blue", "2068", "pop", "Future", nil)
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       expect(album).to(eq(album2))
     end
   end
 
   describe('.clear') do
     it("clears all albums") do
-      album = Album.new("Giant Steps", nil)
+      album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil)
       album.save()
-      album2 = Album.new("Blue", nil)
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
       Album.clear()
       expect(Album.all).to(eq([]))
@@ -44,9 +44,9 @@ describe '#Album' do
 
   describe('.find') do
     it("finds an album by id") do
-      album = Album.new("Giant Steps", nil)
+      album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil)
       album.save()
-      album2 = Album.new("Blue", nil)
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
       expect(Album.find(album.id)).to(eq(album))
     end
@@ -54,7 +54,7 @@ describe '#Album' do
 
   describe('#update') do
     it("updates an album by id") do
-      album = Album.new("Giant Steps", nil)
+      album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil)
       album.save()
       album.update("A Love Supreme")
       expect(album.name).to(eq("A Love Supreme"))
@@ -63,12 +63,23 @@ describe '#Album' do
 
   describe('#delete') do
     it("deletes an album by id") do
-      album = Album.new("Giant Steps", nil)
+      album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil)
       album.save()
-      album2 = Album.new("Blue", nil)
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
       album.delete()
       expect(Album.all).to(eq([album2]))
     end
   end
+
+  describe('.find_by_name') do
+    it("finds an album by album name") do
+      album = Album.new("Giant Steps", "2021", "rock", "John Coltrane", nil)
+      album.save()
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
+      album2.save()
+      expect(Album.find_by_name('Giant Steps')).to(eq(album))
+    end
+  end
+
 end
