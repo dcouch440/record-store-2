@@ -11,12 +11,12 @@ get('/') do
   erb(:albums)
 end
 
-get('/') do
+get('/find_album') do
   @album = Album.find_by_name(params[:search_type], params[:search])
   if @album == nil
     erb(:error)
   else
-    redirect to "albums/#{@album.id}"
+    redirect to "/albums/#{@album.id}"
   end
 end
 

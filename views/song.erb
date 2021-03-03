@@ -1,5 +1,5 @@
-<h2>Song: <%= @song.name %></h2>
-<h3>Album: <%= @song.album.name %></h3>
+<h2><%= @song.name %></h2>
+<h3><%= "#{@song.album.artist} - #{@song.album.name}" %></h3>
 
 <form action="/albums/<%= @song.album.id %>/songs/<%= @song.id %>" method="post">
   <input name="_method" type="hidden" value="patch">

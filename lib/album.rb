@@ -19,16 +19,14 @@ class Album
   def self.all
     @@albums.values()
   end
+
   def self.albums
     @@albums
   end
+
   def save
     @@albums[self.id] = Album.new(self.name, self.year, self.genre, self.artist, self.id)
 
-  end
-
-  def ==(album_to_compare)
-    self.name() == album_to_compare.name()
   end
 
   def self.find(id)
@@ -61,6 +59,7 @@ class Album
   end
 
   def self.find_by_name(data_type, data)
-    @@albums.values().select {|instance| instance.get_data(data_type) == data}[0]
+    @@albums.values().select {|instance| instance.get_data(data_type).downcase() == data.downcase()}[0]
   end
+
 end

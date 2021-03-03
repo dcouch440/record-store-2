@@ -3,17 +3,17 @@
 <form action="/albums" method="post">
   <div class="form-group">
 
-    <label for="album_name">Album name</label>
-    <input id="name" name="album_name" class="form-control" type="text">
-
-    <label for="album_year">Year</label>
-    <input id="year" name="album_year" class="form-control" type="text">
-
-    <label for="album_genre">Genre</label>
-    <input id="genre" name="album_genre" class="form-control" type="text">
+    <label for="album_name">Album Name</label>
+    <input id="name" name="album_name" class="form-control" type="text" autocomplete="off" >
 
     <label for="album_artist">Artist</label>
-    <input id="artist" name="album_artist" class="form-control" type="text">
+    <input id="artist" name="album_artist" class="form-control" type="text" autocomplete="off" >
+
+    <label for="album_genre">Genre</label>
+    <input id="genre" name="album_genre" class="form-control" type="text" autocomplete="off" >
+
+    <label for="album_year">Year</label>
+    <input id="year" name="album_year" class="form-control" type="text" autocomplete="off" >
   </div>
   <button type="submit" class="btn">Go!</button>
 </form>
