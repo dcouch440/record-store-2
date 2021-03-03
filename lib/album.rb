@@ -44,8 +44,19 @@ class Album
     @@albums.delete(self.id)
   end
 
-  def self.find_by_name(name)
-    @@albums.values().select {|obj| obj.name == name}[0]
+  def get_data(type)
+    type == 'name' ?
+      self.name :
+    type == 'genre' ?
+      self.genre :
+    type == 'year' ?
+      self.year :
+    type == 'artist' ?
+      self.artist :
+    null
+  end
+
+  def self.find_by_name(data_type, data)
+    @@albums.values().select {|instance| instance.get_data(data_type) == data}[0]
   end
 end
-

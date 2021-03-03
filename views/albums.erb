@@ -14,9 +14,27 @@
 
 <a href="/albums/new">Add a new album</a>
 
-<form action="/albums/id">
+
+
+
+<form action="/album">
   <div class="form-group">
     <label for="search">Search</label>
+
+    <div>
+      <label for="search-name">Name</label>
+      <input type="radio" id='search-name' name='search_type' value='name' checked>
+
+      <label for="search-year">Year</label>
+      <input type="radio" id='search-year' name='search_type' value='year'>
+
+      <label for="search-name">genre</label>
+      <input type="radio" id='search-genre' name='search_type' value='genre' checked>
+
+      <label for="search-year">artist</label>
+      <input type="radio" id='search-artist' name='search_type' value='artist'>
+    </div>
+
     <input id="search" name="search" class="form-control" type="text">
   </div>
   <button type="submit" class="btn">Go!</button>

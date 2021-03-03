@@ -10,9 +10,14 @@ get('/') do
 end
 
 get('/album') do
-  @album = Album.find_by_name(params[:search])
-  erb(:album)
+  @album = Album.find_by_name(params[:search_type], params[:search])
+  if @album == nil
+    erb(:error)
+  else
+    redirect to "albums/#{@album.id}"
+  end
 end
+
 
 get('/albums') do
   @albums = Album.all
