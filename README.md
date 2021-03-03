@@ -14,7 +14,7 @@ This is an application for learning TDD with ruby while attending Epicodus codin
 
 * * *
 
-## Installation : 
+## Installation :
 
 * Go to (https://github.com/mekinsie/record-store).
 * Navigate to the code button on the github website.
@@ -26,39 +26,39 @@ This is an application for learning TDD with ruby while attending Epicodus codin
 - Within your Bash terminal navigate to your desired location by using cd followed by your desired directory.
 ```bash
  cd Desktop
-``` 
+```
 
 - Once you have chosen your desired directory use the command.
-```bash 
+```bash
 git clone https://github.com/mekinsie/record-store.git
 ```
 
-<div 
+<div
   style="
-    background-color: #d1ecf1; 
-    color: grey; padding: 6px; 
-    font-size: 9px; 
-    border-radius: 5px; 
-    border: 1px solid #d4ecf1; 
+    background-color: #d1ecf1;
+    color: grey; padding: 6px;
+    font-size: 9px;
+    border-radius: 5px;
+    border: 1px solid #d4ecf1;
     margin-bottom: 12px"
-> 
-  <span 
+>
+  <span
     style="
-      font-size: 12px; 
-      font-weight: 600; 
+      font-size: 12px;
+      font-weight: 600;
       color: #0c5460;"
   >
     ⓘ
   </span>
-  <span 
+  <span
     style="
-      font-size: 12px; 
-      font-weight: 900; 
+      font-size: 12px;
+      font-weight: 900;
       color: #0c5460;
       margin-bottom: 24px"
   >
-    Note : 
-  </span> 
+    Note :
+  </span>
   If you have any problems make sure your HTTPS code is correct! The example above might not be the most recent HTTPS code!
 </div>
 
@@ -91,10 +91,10 @@ ruby "file goes here (no quotes)"
 * To view the test suite, open the spec folder
 
 * To run the test suite yourself and verify program functionality
-  
+
 ```bash
 rspec
-``` 
+```
 
 ## Addition comments:
 * Created on 3/2/21
