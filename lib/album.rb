@@ -11,9 +11,11 @@ class Album
     @artist = artist
     @id = id || @@total_rows += 1  # We've added code to handle the id.
   end
+
   def self.name_all
     @@albums.values().map {|instance| instance.name()}
   end
+
   def songs
     Song.find_by_album(self.id)
   end
@@ -28,7 +30,6 @@ class Album
 
   def save
     @@albums[self.id] = Album.new(self.name, self.year, self.genre, self.artist, self.id)
-
   end
 
   def self.find(id)
@@ -38,6 +39,12 @@ class Album
   def self.clear
     @@albums = {}
     @@total_rows = 0
+  end
+
+  def self.sort_albums
+    @@albums.values().sort{
+      |a, b| a.name.downcase <=> b.name.downcase
+    }
   end
 
   def update(name)
@@ -63,4 +70,5 @@ class Album
   def self.find_by_name(data_type, data)
     @@albums.values().select {|instance| instance.get_data(data_type).downcase() == data.downcase()}[0]
   end
+
 end

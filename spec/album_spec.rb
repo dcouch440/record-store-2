@@ -35,6 +35,18 @@ describe '#Album' do
     end
   end
 
+  describe('#sort_albums') do
+    it("sorts album names alphabetically") do
+      album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil)
+      album.save()
+      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
+      album2.save()
+      album3 = Album.new("Zoo Tycoon 5 Future Extreme", "2068", "pop", "Future", nil)
+      album3.save()
+      expect(Album.sort_albums().map{|inst| inst.name}).to(eq(['Blue', 'Giant Steps', "Zoo Tycoon 5 Future Extreme"]))
+    end
+  end
+
   describe('.find') do
     it("finds an album by id") do
       album = Album.new("Giant Steps", "2021", "rock", "The Spoons", nil)
@@ -86,4 +98,5 @@ describe '#Album' do
       expect(album.songs).to(eq([song, song2]))
     end
   end
+
 end

@@ -21,7 +21,7 @@ get('/find_album') do
 end
 
 get('/albums') do
-  @albums = Album.all
+  @albums = Album.sort_albums
   erb(:albums)
 end
 
@@ -40,8 +40,7 @@ post('/albums') do
   )
   album = Album.new(name, year, genre, artist, nil)
   album.save()
-  @albums = Album.all()
-  puts Album.albums
+  @albums = Album.sort_albums
   erb(:albums)
 end
 
