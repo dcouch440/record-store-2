@@ -16,6 +16,10 @@ class Album
     Song.find_by_album(self.id)
   end
 
+  def ==(album_to_compare)
+    self.name() == album_to_compare.name()
+  end
+
   def self.all
     @@albums.values()
   end

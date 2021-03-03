@@ -79,13 +79,13 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
-      expect(Album.find_by_name('Giant Steps')).to(eq(1))
+      expect(Album.find_by_name('name', 'Giant Steps')).to(eq(album))
     end
   end
 
   describe('#songs') do
     it("returns an album's songs") do
-      album = Album.new("Giant Steps", nil)
+      album = Album.new("Giant Steps", "2021", "rock", "John Coltrane", nil)
       album.save()
       song = Song.new("Naima", album.id, nil)
       song.save()
