@@ -1,5 +1,5 @@
 # Record Store
-#### *Co-Created By: David Couch, Mekinsie Callahan & Zachariah Rutledge*
+#### *Co-Created By: David Couch, Mekinsie Callahan & Zachariah Rutledge, Andy Lawson*
 
 ## Description
 This is an application for learning TDD with ruby while attending Epicodus coding school. This app Might be un finished and does not represent my class mates or my own coding knowledge.
@@ -106,6 +106,8 @@ rspec
 
 _David Couch: [Email](dcouch440@gmail.com)_
 _Mekinsie Callahan: [Email](mekinsie.aja@gmail.com)_
+_Andy Lawson: [Email](alawson89@gmail.com)_
+
 
 
 * * *
@@ -114,5 +116,6 @@ _Mekinsie Callahan: [Email](mekinsie.aja@gmail.com)_
 > [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
 > David Couch &copy; 2021
 > Mekinsie Callahan &copy; 2021
+> Andy Lawson &copy; 2021
 
 * * *
