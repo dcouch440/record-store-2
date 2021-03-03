@@ -95,7 +95,7 @@ describe '#Song' do
     it("finds the album a song belongs to") do
       song = Song.new("Naima", @album.id, nil)
       song.save()
-      expect(song.album()).to(eq(@album))
+      expect(song.album().name).to(eq(@album.name))
     end
   end
 

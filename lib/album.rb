@@ -11,13 +11,11 @@ class Album
     @artist = artist
     @id = id || @@total_rows += 1  # We've added code to handle the id.
   end
-
+  def self.name_all
+    @@albums.values().map {|instance| instance.name()}
+  end
   def songs
     Song.find_by_album(self.id)
-  end
-
-  def ==(album_to_compare)
-    self.name() == album_to_compare.name()
   end
 
   def self.all
@@ -65,5 +63,4 @@ class Album
   def self.find_by_name(data_type, data)
     @@albums.values().select {|instance| instance.get_data(data_type).downcase() == data.downcase()}[0]
   end
-
 end

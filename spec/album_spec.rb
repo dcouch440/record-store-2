@@ -20,15 +20,7 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "2068", "pop", "Future", nil) # nil added as second argument
       album2.save()
-      expect(Album.all).to(eq([album, album2]))
-    end
-  end
-
-  describe('#==') do
-    it("is the same album if it has the same attributes as another album") do
-      album = Album.new("Blue", "2068", "pop", "Future", nil)
-      album2 = Album.new("Blue", "2068", "pop", "Future", nil)
-      expect(album).to(eq(album2))
+      expect(Album.name_all()).to(eq([album.name(), album2.name()]))
     end
   end
 
@@ -49,7 +41,7 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
-      expect(Album.find(album.id)).to(eq(album))
+      expect(Album.find(album.id).name).to(eq(album.name))
     end
   end
 
@@ -69,7 +61,7 @@ describe '#Album' do
       album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
       album.delete()
-      expect(Album.all).to(eq([album2]))
+      expect(Album.name_all).to(eq([album2.name]))
     end
   end
 
@@ -79,7 +71,7 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "2068", "pop", "Future", nil)
       album2.save()
-      expect(Album.find_by_name('name', 'Giant Steps')).to(eq(album))
+      expect(Album.find_by_name('name', 'Giant Steps').name).to(eq(album.name))
     end
   end
 
@@ -94,5 +86,4 @@ describe '#Album' do
       expect(album.songs).to(eq([song, song2]))
     end
   end
-
 end
