@@ -9,8 +9,7 @@ class Album
     @year = year
     @genre = genre
     @artist = artist
-    @id = id || @@total_rows += 1  # We've added code to handle the id.
-  end
+    @id = (id || @@total_rows += 1)
 
   def self.name_all
     @@albums.values().map {|instance| instance.name()}

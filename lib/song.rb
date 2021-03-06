@@ -12,7 +12,7 @@ class Song
   def initialize(name, album_id, id)
     @name = name
     @album_id = album_id
-    @id = id || @@total_rows += 1
+    @id = (id || @@total_rows += 1)
   end
 
   def ==(song_to_compare)

@@ -1,8 +1,8 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/album')
 require('pry')
 require('./lib/song')
+require('./lib/album')
 also_reload('lib/**/*.rb')
 
 # Albums______________________________________>
@@ -63,9 +63,6 @@ delete('/albums/:id') do
   erb(:albums)
 end
 
-
-
-
 # Songs ______________________________________>
 
 # Get the detail for a specific song such as lyrics and songwriters.
@@ -77,8 +74,10 @@ end
 # Post a new song. After the song is added, Sinatra will route to the view for the album the song belongs to.
 post('/albums/:id/songs') do
   @album = Album.find(params[:id].to_i())
+
   song = Song.new(params[:song_name], @album.id, nil)
   song.save()
+
   erb(:album)
 end
 
